@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Poppins", system-ui;
+}
+
+:root {
+  --primary-color: #000;
+  --drop-shadow: rgba(0, 0, 0, 0.1);
+  --primary-color-op: rgba(0, 0, 0, 0.3);
+  --secondary-color: #fff;
+  --main-color: #29abe2;
+}
+body {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-family: "Poppins", system-ui;
+}
+
+.form,
+.formcr {
+  border: 2px solid var(--main-color);
+  background-color: var(--secondary-color);
+  filter: drop-shadow(0px 0px 10px var(--drop-shadow));
+  height: 600px;
+  width: 570px;
+}
+
+.form .signin,
+.formcr .signin {
+  padding: 80px;
+}
+
+.form .signin .head,
+.formcr .signin .head {
+  display: flex;
+  justify-content: center;
+  padding: 0px 0px 30px;
+}
+
+.form .signin .head .logo img {
+  height: 76px;
+  width: 76px;
+}
+.formcr .signin .head .logo img {
+  height: 76px;
+  width: 76px;
+  transform: translateX(25px);
+}
+
+.form .signin .head .logo h2,
+.formcr .signin .head .logo h2 {
+  font-weight: 600;
+  font-style: normal;
+  margin: 10px 0px 0px;
+}
+
+.form2 .name,
+.form2 .password,
+.form2 .email {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 405px;
+  background: #fff;
+  padding: 0px 0px 30px;
+  display: flex;
+  justify-content: center;
+}
+.wrapper .input-data {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+.wrapper .input-data input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 13px;
+  color: var(--main-color);
+}
+.wrapper .input-data label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: var(--primary-color-op);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.input-data .underline {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--main-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before {
+  transform: scaleX(1);
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px 40px;
+}
+
+.button .button1 a,
+.button .button2 a {
+  text-decoration: none;
+}
+
+.button .button1 button,
+.button .button2 button {
+  transition: all 0.4s ease;
+}
+
+.button .button1 button {
+  width: 170px;
+  height: 40px;
+  border: 2px solid var(--main-color);
+  background: none;
+  /* border-radius: 10px; */
+  font-size: 16px;
+  color: var(--main-color);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button .button1 button:hover,
+.button .button2 button:hover {
+  transform: scale(98%);
+}
+
+.button .button2 button {
+  width: 160px;
+  height: 40px;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  border: none;
+  /* border-radius: 10px; */
+  font-size: 16px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form .signin .oauth1 p,
+.formcr .signin .oauth1 p {
+  font-size: 12px;
+  text-align: center;
+  color: var(--primary-color-op);
+}
+
+/* Media Querry */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  .form {
+    width: 300px;
+    height: 500px;
+  }
+
+  .formcr {
+    width: 300px;
+    height: 470px;
+  }
+
+  .formcr .signin,
+  .form .signin {
+    padding: 30px;
+  }
+
+  .formcr .signin .head .logo img {
+    height: 50px;
+    width: 50px;
+    transform: translateX(15px);
+  }
+
+  .form .signin .head .logo img {
+    width: 50px;
+  }
+
+  .form .signin .head .logo h2 {
+    margin: 0px;
+  }
+
+  .wrapper {
+    padding: 0px 0px 15px;
+  }
+
+  .wrapper .input-data label {
+    font-size: 12px;
+  }
+
+  .input-data input:focus ~ label,
+  .input-data input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 10px;
+  }
+
+  .formcr .button .button1 button,
+  .form .button .button2 button {
+    width: 95px;
+    height: 30px;
+    font-size: 10px;
+    /* border-radius: 0; */
+  }
+
+  .formcr .button .button2 button,
+  .form .button .button1 button {
+    height: 30px;
+    width: 100px;
+    font-size: 9px;
+  }
+
+  .formcr .signin .oauth1 p,
+  .form .signin .oauth1 p {
+    font-size: 10px;
+  }
+}
+/* Media Querry */

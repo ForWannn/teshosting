@@ -1,0 +1,61 @@
+:root {
+  --primary-color: white;
+  --secondary-color: black;
+  --hover-color: #29abe2;
+}
+
+body {
+  display: flex;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 2000px;
+  background-color: var(--primary-color);
+}
+
+.header {
+  width: 100%;
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  margin: 15px 0px 0px 0px;
+}
+
+.header .nav .brand {
+  display: flex;
+}
+
+.header .nav .brand .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .nav .link {
+  align-items: center;
+  display: flex;
+  width: 30vw;
+  justify-content: space-evenly;
+  cursor: not-allowed;
+}
+
+.header .nav .link a {
+  color: var(--secondary-color) !important;
+}
+.header .nav .brand a {
+  text-decoration: none;
+  background: #0071bc;
+  background: linear-gradient(to bottom right, #0071bc 0%, #29abe2 73%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header .nav .brand .logo img {
+  width: 40px;
+  height: 38px;
+}
